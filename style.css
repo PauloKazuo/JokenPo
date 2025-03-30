@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: 'Press Start 2P', cursive;
 }
 
 body {
@@ -26,18 +29,19 @@ body {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 80px;
+    letter-spacing: 2px;
 }
 
 .buttons {
     margin: 30px 0;
     display: flex;
-    gap: 40px;
+    gap: 60px;
 }
 
 button {
     padding: 20px;
-    font-size: 50px;
+    font-size: 55px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -58,7 +62,7 @@ button:active {
 }
 
 #papel {
-    background-color: #9EE01A;
+    background-color: #9ee01a;
 }
 
 #tesoura {
@@ -66,23 +70,75 @@ button:active {
 }
 
 p {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;  /* Aumenta o espaçamento entre as letras */
+    font-size: 22px;    
+    margin: 20px 0;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0c80d3;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.reset-button:hover {
+    opacity: 0.6;
+}
+
+.reset-button:active {
+    opacity: 1;
+}
+
+.countdown-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    z-index: 100; /* Fica acima de tudo */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Impede interações quando invisível */
+}
+
+.countdown-mask.show.show {
+    opacity: 1; /* Quando ativamos, a máscara fica visível */
+    pointer-events: all; /* Permite interações quando visível */
 }
 
 #countdown {
-    font-size: 2rem;
+    font-size: 30rem;
     font-weight: bold;
     text-align: center;
-    color: red;
-    animation: fadeInOut 1s infinite;
+    color: #ffd64b;
+    animation: fadeInOut 1s  infinite;
 }
 
 @keyframes fadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -97,8 +153,22 @@ p {
 
 @media screen and (max-width: 540px) {
 
-    .buttons, p, h1, .container {
+    .buttons,
+    p,
+    h1,
+    .container {
         transform: scale(0.8);
     }
 
+    .container {
+        width: 118%;
+    }
+
+    p {
+        width: 120%;
+    }
+
+    #countdown {
+        font-size: 20rem;
+    }
 }
