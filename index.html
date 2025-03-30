@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>DevClub JokenPô</title>
 </head>
+
 <body>
+    <div class="countdown-mask">
+        <p id="countdown"></p>
+    </div>
     <div class="container">
 
-    <h1>JokenPô</h1>
 
-    <div class="buttons">
-        <button id="pedra">&#x270A;</button>
-        <button id="papel">&#x1F590;</button>
-        <button id="tesoura">&#x270C;</button>
-    </div>
+        <h1>JokenPô</h1>
 
-    <p class="result-marker"></p>
-    <p class="wins-marker"></p>
+        <div class="buttons">
+            <button id="pedra">&#x270A;</button>
+            <button id="papel">&#x1F590;</button>
+            <button id="tesoura">&#x270C;</button>
+        </div>
+
+        <p class="result-marker"></p>
+        <p class="player-round"></p>
+        <p class="machine-round"></p>
+
 
         <p class="your-score">Sua pontuação: <span>0</span></p>
         <p class="machine-score">Pontuação da Alexa: <span>0</span></p>
-    
-</div>
-<script src="ENUM.js"></script>
+        <button class="reset-button">Reiniciar</button>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
